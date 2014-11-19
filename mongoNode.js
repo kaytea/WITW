@@ -113,7 +113,7 @@ app.get('/redline.json', function(request, response) {
 
 	http.get(options, function(resp) {
 	  	var data = '';
-	  	console.log("Got response: " + resp.statusCode);
+	  	//console.log("Got response: " + resp.statusCode);
 	  	resp.on('data', function(chunk) {
 	    	data += chunk;
 	  	});
@@ -121,7 +121,7 @@ app.get('/redline.json', function(request, response) {
 	    	response.send(data);
 	  	});
 	}).on('error', function(e) {
-	  	console.log("Got error: " + e.message);
+	  	//console.log("Got error: " + e.message);
 	});
 });
 
