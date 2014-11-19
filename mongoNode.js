@@ -55,6 +55,8 @@ app.get('/locations.json', function(request, response) {
 	response.set('Content-Type', 'text/html');
 	var userSearch = request.query.login;
 	var userLog = [];
+	response.header("Access-Control-Allow-Origin", "X-Requested-With");
+	response.header("Access-Control-Allow-Origin", "*");
 	db.collection('locations', function(er, collection) {
 		collection.find().toArray(function(err, cursor) {
 			if (!err && userSearch != undefined) {
