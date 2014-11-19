@@ -16,6 +16,9 @@ var db = mongo.Db.connect(mongoUri, function(error, databaseConnection) {
 
 //POST location to 'collection'
 app.post('/sendLocation', function(request, response) {
+	response.header("Access-Control-Allow-Origin", "X-Requested-With");
+	response.header("Access-Control-Allow-Origin", "*");
+
 	var user = request.body.login;
 	var getLat = request.body.lat;
 	var getLng = request.body.lng;
